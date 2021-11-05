@@ -1,0 +1,65 @@
+﻿@model Tuple<Visea_Expense_Manager.Models.User, Boolean>
+
+@{
+    ViewData["Title"] = "Edit Profile";
+}
+
+<h1>Edit</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Item1.Id" />
+            <div class="form-group">
+                <label asp-for="Item1.Name" class="control-label"></label>
+                <input name="Name" asp-for="Item1.Name" class="form-control" />
+                <span asp-validation-for="Item1.Name" class="text-danger"></span>
+            </div>
+            @if (Model.Item2)
+            {
+                <div class="form-group">
+                    <label asp-for="Item1.Role" class="control-label"></label>
+                    <select name="RoleId" asp-for="Item1.RoleId" class="form-control">
+                        <option value="">--choisir une option--</option>
+                        <option value="3">Administrator</option>
+                        <option value="2">Director</option>
+                        <option value="1">Consultant</option>
+                    </select>
+                </div>
+            }
+            else
+            {
+                <input hidden name="RoleId" asp-for="Item1.RoleId" />
+            }
+            <input type="hidden" name="Email" asp-for="Item1.Email" />
+            <div class="form-group">
+                <label class="control-label">Manager </label>
+                <input name="Director" asp-for="Item1.Director" class="form-control" />
+                <span asp-validation-for="Item1.Director" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Phone" class="control-label"></label>
+                <input name="Phone" asp-for="Item1.Phone" class="form-control" />
+                <span asp-validation-for="Item1.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="margin:6px" class="btn btn-primary"asp-action="Index">Profil</a>
+    @if (Model.Item2)
+    {
+        <a style="margin:6px" class="btn btn-primary" asp-action="Liste"> Annuaire </a>
+    }
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

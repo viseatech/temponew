@@ -1,0 +1,829 @@
+﻿@model Tuple<Visea_Expense_Manager.Data.MvcNoteContext, DateTime, IEnumerable<int>>
+
+@{
+    ViewData["Title"] = "Tempo";
+}
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<!--<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.3/css/select.dataTables.min.css">
+
+<!--link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">-->
+<style type="text/css">
+    .Highlighted a {
+        background-color: Green !important;
+        background-image: none !important;
+        color: White !important;
+        font-weight: bold !important;
+        font-size: 12pt;
+    }
+
+    .dataTables_filter input {
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .event a {
+        background-color: orange !important;
+        background-image: none !important;
+        color: White !important;
+    }
+
+    .eventvalid a {
+        background-color: green !important;
+        background-image: none !important;
+        color: White !important;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .box2 {
+        display: flex;
+        flex-wrap: wrap;
+        position:relative;
+        margin-bottom:12px;
+    }
+
+    .buttonbox {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .zblock {
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+
+    .zblock2 {
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 145px;
+        margin-right: 145px;
+    }
+
+    .rcorners2 {
+        border-radius: 25px;
+        border: 2px solid #224BB6;
+        padding: 1em;
+        width: 400px;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    .rcornersdetail {
+        border-radius: 25px;
+        border: 2px solid #224BB6;
+        padding: 1em;
+        margin: 12px;
+    }
+
+    .rcorners3 {
+        border-radius: 25px;
+        border: 2px solid #224BB6;
+        padding: 20px;
+        width: 130px;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .zbutton {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+    }
+
+    .zbtn {
+        margin: 6px;
+    }
+
+    .xbtn {
+        margin-left: 90%;
+        margin-bottom: 3%;
+    }
+    .filtrebut{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+    .rcornersifram {
+        border-radius: 25px;
+        border: 2px solid #224BB6;
+        background-color: white;
+        padding: 10px;
+        width: 100%;
+        height: 50em;
+    }
+
+    .ui-widget-content {
+        border-radius: 25px;
+        border: 2px solid #224BB6 !important;
+        border-color: #224BB6;
+        padding: 10px;
+    }
+
+    .ui-widget-contentperso {
+        border-radius: 25px;
+        border: 0px !important;
+        border-color: #224BB6;
+        background-color: transparent;
+        padding: 10px;
+    }
+
+    [role="dialog"] {
+        border-radius: 25px;
+        border: 0px !important;
+        border-color: #224BB6;
+        background-color: transparent;
+        padding: 10px;
+    }
+
+    .ui-dialog-titlebar {
+        border-radius: 25px;
+        border: 2px solid #224BB6 !important;
+        background-color: white !important;
+        background: none !important;
+        padding: 10px;
+    }
+
+    div.dataTables_length {
+        float: left;
+    }
+
+    div.dataTables_filter {
+        float: right;
+    }
+
+    div.dataTables_info {
+        float: left;
+    }
+
+    div.dataTables_paginate {
+        float: right;
+    }
+
+    div.DTTT {
+        float: left;
+        margin-right: 50px;
+    }
+
+    div.buttons {
+        clear: both;
+    }
+</style>
+
+<h1>Tempo &ensp;<i class="fa fa-calendar" style="font-size:48px"></i></h1>
+<body onresize="reportWindowSize()" id="bodyposition">
+    <div>
+        <div class="box2">
+            <div>
+                <div style="margin-bottom:10px" id="datepicker" data-provide="datepicker-inline"></div>
+            </div>
+            <div class="zblock2"></div>
+            <div id="infobox">
+                <!--<p type="text" id="username">Utilisateur : @User.Identity.Name</p>-->
+                <div hidden id="infodate" class="rcorners2">
+                    <p type="number" id="hourday" />
+                    <p type="text" id="infovalidation" />
+                    <div hidden id="monthValidationButton">
+                        <input hidden type="datetime" id="datepicker3" name="datepicker3" />
+                        <button id="buttonmonthvalidation" class="btn btn-primary" style="background: none !important;background-color: #007bff !important"> Valider le mois en cours ? </button>
+                    </div>
+                </div>
+                <div class="rcorners2">
+                    <form class="rcornerimport" method="post" enctype="multipart/form-data" asp-action="Import">
+                        <div class="form-group">
+                            <input type="file" name="file" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Importer les événements en Csv" class="btn btn-primary" />
+                        </div>
+                    </form>
+                    <a href="~/Export/Fiche_type.xlsx"> Télécharger le fichier xlsx de référence </a>
+                </div>
+
+                <!--
+            <form hidden asp-action="Valid_Month" id="monthValidationButton" onclick="validconfirmation()">
+                <input hidden type="datetime" id="datepicker3" name="datepicker3" />
+                <input type="submit" value="Valider le mois en cours ?" class="btn btn-danger" />
+            </form>
+            -->
+            </div>
+            <div class="buttonbox">
+                <div hidden id="hidenbeforselectdate">
+                    <input class="rcorners3" type="datetime" id="datepicker2" name="datepicker2" />
+                    <button id="getmonth" class="btn btn-primary zbtn" style="background: none !important; background-color: #007bff !important">Afficher tout le mois</button>
+
+                </div>
+
+                <div hidden id="creat_button">
+                    <button id="createevent" class="btn btn-primary zbtn">Ajouter</button>
+                    <button id="editevent" class="btn btn-primary zbtn">Editer</button>
+                    <button id="coller" class="btn btn-primary zbtn" style="background: none !important; background-color: #007bff !important">Coller</button>
+                    <button id="copier1" onclick="copiers(0)" class="btn btn-primary zbtn">Copier</button>
+                </div>
+            </div>
+            <div><a class="btn btn-primary zbtn filtrebut" asp-area="" asp-controller="Events" asp-action="">Filtrer</a></div>
+        </div>
+        <div>
+            <div id="Listevent"></div>
+            <div style="overflow-x: auto; ">
+                <table id="listeday" class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Copier</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Client</th>
+                            <th>Mission</th>
+                            <th>Objet</th>
+                            <th>Nature</th>
+                            <th>commentaire</th>
+                            <th>Heures</th>
+                            <th>Mois</th>
+                            <th>Année</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="rcornersdetail">
+            <dl class="row" style="margin-bottom: 0px;">
+                <dt class="col-sm-2">
+                    Date de creation
+                    <hr />
+                </dt>
+                <dd id="dateofcreationfild" class="col-sm-10">
+                </dd>
+                <dt class="col-sm-2">
+                    Etape de la mission
+                    <hr />
+                </dt>
+                <dd id="etapefild" class="col-sm-10">
+                </dd>
+                <dt class="col-sm-2">
+                    Commentaire
+                </dt>
+                <dd id="commentefild" class="col-sm-10">
+                </dd>
+            </dl>
+        </div>
+        <div id="dialog" title="Crée un nouvel événement">
+            <div id="liberty">
+                <iframe id="iframcreat" class="rcornersifram" src=""></iframe>
+            </div>
+        </div>
+        <div id="dialog2" title="editer événement">
+            <div id="liberty">
+                <iframe id="iframedit" class="rcornersifram" src=""></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+<div class="zblock"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="~/js/jquery.dataTables.min.js" defer></script>
+<script src="~/js/dataTables.buttons.min.js" defer></script>
+<script src="~/js/buttons.flash.min.js" defer></script>
+<script src="~/js/jszip.min.js" defer></script>
+<!--<script src="~/js/pdfmake.min.js" defer></script>-->
+<!--<script src="~/js/vfs_fonts.js" defer></script>-->
+<script src="~/js/buttons.html5.min.js" defer></script>
+<script src="~/js/buttons.print.min.js" defer></script>
+<script src="~/js/dataTables.bootstrap4.min.js" defer></script>
+<script src="~/js/moment.min.js" defer></script>
+<script src="~/js/datetime-moment.js" defer></script>
+<!--<script src="{{asset('~/wwwroot/js/notify.js')}}" defer></script>-->
+<script src="~/js/notify.js" defer></script>
+<script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js" defer></script>
+
+
+
+<script>
+    $( document ).ready(function() {
+        //var datepicker = $.fn.datepicker.noConflict(); // return $.fn.datepicker to previously assigned value
+        //$.fn.bootstrapDP = datepicker;                 // give $().bootstrapDP the bootstrap-datepicker functionality
+        console.log('@Model.Item3.ToArray()');
+        const json = '@Json.Serialize(Model.Item3.ToArray())';
+        console.log("listoffail");
+        console.log(json);
+        const obj = JSON.parse(json);
+        console.log(obj);
+        for (i = 0; i < obj.length; i += 1) {
+            copiertxt = "Erreur d'importation ligne : " + obj[i];
+            $.notify(copiertxt, "error");
+        }
+        document.getElementById('copier1').disabled = true;
+        document.getElementById("editevent").disabled = true;
+
+    });
+    var eventDates = {};
+    curdate = new Date().toLocaleDateString();
+    getcolorlistbymonth(curdate);
+    //$('#infobox').draggable();
+    $(function () {
+        $.fn.dataTable.moment('DD/MM/YYYY');
+        var table = $('#listeday').DataTable({
+                        responsive: true,
+                        select: {
+                            style: 'single'
+                        },
+                        dom: 'lftip',
+                        buttons: [
+                            {
+                                extend: 'copyHtml5',
+                                exportOptions: {
+                                    columns: [1, 2, 3, 4, 5, 6, 7, 8,9,10]
+                                }
+                            },
+                            {
+                                extend: 'excelHtml5',
+                                autoFilter: true,
+                                title:'',
+                                sheetName: 'Exported data',
+                                exportOptions: {
+                                    columns: [1, 2, 3, 4, 5, 6, 7, 8,9,10]
+                                }
+                            },
+                            {
+                                extend: 'print',
+                                exportOptions: {
+                                    columns: [1, 2, 3, 4, 5, 6, 7, 8,9,10]
+                                }
+                            }
+                        ],
+                        initComplete: function () {
+                            var btns = $('.dt-button');
+                            btns.addClass('btn btn-primary zbtn');
+                        },
+                        "columnDefs": [
+                            { "visible": false, "targets": 0 },
+                            { "visible": false, "targets": 1 },
+                            { "visible": false, "targets": 7 },
+                            { "visible": false, "targets": 9 },
+                            { "visible": false, "targets": 10 }
+                        ],
+                        "order": [[0, "desc"]],
+        });
+        table.on('select', function (e, dt, type, indexes) {
+            var rowData = table.rows(indexes).data().toArray();
+            idselect = rowData[0][0];
+            console.log(idselect);
+
+            document.getElementById("iframedit").src = "@this.Url.Action("Edit","Tempo")" + "/" + idselect;
+            console.log(document.getElementById("iframedit").src);
+            $("#copier1").attr("onclick", "copiers(" + idselect + ")");
+            document.getElementById('copier1').disabled = false;
+            document.getElementById("editevent").disabled = false;
+            var rowlist = JSON.parse(sessionStorage.getItem("currentlist"));
+            console.log(rowlist);
+            var toeventdate = new Date(rowlist[indexes].date_of_creation)
+            document.getElementById('dateofcreationfild').innerHTML = toeventdate.getDate() + "/" + (toeventdate.getMonth() + 1) + "/" + toeventdate.getFullYear();
+            document.getElementById('etapefild').innerHTML = rowlist[indexes].classe4_str;
+            document.getElementById('commentefild').innerHTML = rowlist[indexes].commente;
+            //events.prepend('<div><b>' + type + ' selection</b> - ' + JSON.stringify(rowData) + '</div>');
+            })
+            .on('deselect', function (e, dt, type, indexes) {
+                document.getElementById('copier1').disabled = true;
+                document.getElementById("editevent").disabled = true;
+                //events.prepend('<div><b>' + type + ' <i>de</i>selection</b> - ' + JSON.stringify(rowData) + '</div>');
+            });
+
+        $('#listeday tbody').on('click', 'tr', function () {
+            $(this).toggleClass('selected');
+        });
+
+        $('#button').click(function () {
+            alert(table.rows('.selected').data().length + ' row(s) selected');
+        });
+        $.datepicker.regional['fr'] = {clearText: 'Effacer', clearStatus: '',
+            closeText: 'Fermer', closeStatus: 'Fermer sans modifier',
+            prevText: '&lt;Préc', prevStatus: 'Voir le mois précédent',
+            nextText: 'Suiv&gt;', nextStatus: 'Voir le mois suivant',
+            currentText: 'Courant', currentStatus: 'Voir le mois courant',
+            monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+            'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+            monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun',
+            'Jul','Aoû','Sep','Oct','Nov','Déc'],
+            monthStatus: 'Voir un autre mois', yearStatus: 'Voir un autre année',
+            weekHeader: 'Sm', weekStatus: '',
+            dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+            dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+            dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+            dayStatus: 'Utiliser DD comme premier jour de la semaine', dateStatus: 'Choisir le DD, MM d',
+            dateFormat: 'dd/mm/yy', firstDay: 0,
+            initStatus: 'Choisir la date', isRTL: false};
+        $.datepicker.setDefaults($.datepicker.regional['fr']);
+
+
+
+        //eventDates[ new Date( '03/03/2020' )] = new Date( '03/03/2020' );
+
+        //var json = '@Json.Serialize(Model.Item1.Event.Where(s => s.User.Contains(User.Identity.Name)));';
+        /*
+        console.log(json);
+        var list = JSON.parse(json);
+        console.log(list);
+        for (i = 0; i < list.length; i += 1) {
+            var toeventdate = new Date(list[i].date);
+            var hourdate = new Date(list[i].heures)
+            if (eventDates[toeventdate])
+                eventDates[toeventdate] += hourdate.getHours();
+            else
+                eventDates[toeventdate] = hourdate.getHours();
+
+            console.log("heures = " + eventDates[toeventdate.toString()]);
+        } */
+
+        console.log(eventDates);
+
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            beforeShowDay: function (date) {
+                // exclude weekends
+                //if (!$.datepicker.noWeekends(date)[0])
+                //    return [false, '', ''];
+
+                if (eventDates[date] && eventDates[date] >= 8) {
+                    return [true, 'eventvalid', 'nb h total >= 8'];
+                }
+                return [true, eventDates[date] != undefined ? 'event' : '', 'nb h total < 8'];
+            },
+            firstDay: 1,
+            autoSize: true,
+            onSelect: function (dateText) {
+
+                $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
+                $('#datepicker3').datepicker("setDate", $(this).datepicker("getDate"));
+                is_valid_month();
+                sessionStorage.setItem("datetripe", $(this).datepicker("getDate"));
+                sessionStorage.setItem("datetripeText", dateText);
+                //$('#datepicker2').val($(this).datepicker("getDate"));
+                //document.getElementById('datepicker2').value = $(this).datepicker("getDate");
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("getlistbydate")",
+                    data: {datee: dateText},
+                    dataType: "json",
+                    success: function (list) {
+                        console.log(list)
+                        updatelist(list,dateText,0);
+
+                    },
+                    error: function (req, status, error) {
+                        document.getElementById('creat_button').hidden = true;
+                        alert("date note valide recharge page or call a administrator");
+                    }
+                });
+
+            },
+            onChangeMonthYear: function (year, month, inst) {
+                strdate = month + "/" + year;
+                getcolorlistbymonth(strdate);
+            }
+        });
+        $("#datepicker").datepicker("setDate", new Date());
+        //$('.ui-widget.ui-widget-content').removeProperty("border");
+
+        $("#dialog").dialog({
+            width: 'auto', // overcomes width:'auto' and maxWidth bug
+            maxWidth: 650,
+            height: 'auto',
+            autoOpen: false,
+            autoResize: true,
+            autoReposition: true,
+            modal: true,
+            resizable:true,
+            draggable: true,
+            create: function(event, ui) {
+                var widget = $(this).dialog("widget");
+                $(".ui-dialog   ", widget)
+                    .removeClass(".ui-dialog-titlebar-close")
+                    .addClass("close");
+            },
+            open: function (event, ui) {
+                $('#dialog').css('overflow', 'hidden'); //this line does the actual hiding
+                //$(this).parent().css('position', 'fixed');
+                $("#dialog").prev('.ui-dialog-titlebar').hide();
+            }
+        });
+
+        $("#dialog2").dialog({
+            width: 'auto', // overcomes width:'auto' and maxWidth bug
+            maxWidth: 650,
+            height: 'auto',
+            autoOpen: false,
+            autoResize: true,
+            autoReposition: true,
+            modal: true,
+            resizable: true,
+            draggable: true,
+            create: function (event, ui) {
+                var widget = $(this).dialog("widget");
+                $(".ui-dialog   ", widget)
+                    .removeClass(".ui-dialog-titlebar-close")
+                    .addClass("close");
+            },
+            open: function (event, ui) {
+                $('#dialog2').css('overflow', 'hidden'); //this line does the actual hiding
+                //$(this).parent().css('position', 'fixed');
+                $("#dialog2").prev('.ui-dialog-titlebar').hide();
+            }
+        });
+
+
+        $("#datepicker2").datepicker();
+
+        $("#datepicker3").datepicker();
+
+        if (typeof sessionStorage != 'undefined') {
+            if ('datetripe' in sessionStorage && 'datetripeText' in sessionStorage) {
+                var sessiondate = sessionStorage.getItem("datetripe");
+                var sessiondateText = sessionStorage.getItem("datetripeText");
+
+                $('#datepicker').datepicker("setDate", sessiondateText);
+                $('#datepicker2').datepicker("setDate", sessiondateText);
+                $('#datepicker3').datepicker("setDate", sessiondateText);
+                is_valid_month();
+                //$('#datepicker2').val($(this).datepicker("getDate"));
+                //document.getElementById('datepicker2').value = $(this).datepicker("getDate");
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("getlistbydate")",
+                    data: { datee: sessiondateText },
+                    dataType: "json",
+                    success: function (list) {
+                        console.log(list)
+                        updatelist(list, sessiondateText,0);
+                    },
+                    error: function (req, status, error) {
+                        document.getElementById('creat_button').hidden = true;
+                        alert("date note valide recharge page or call a administrator");
+                    }
+                });
+            }
+        } else {
+            alert("sessionStorage n'est pas supporté");
+        }
+    });
+
+    $( "#createevent" ).button().on( "click", function() {
+        $("#dialog").dialog("open");
+        $("#dialog").attr('class', 'ui-widget-contentperso');
+    });
+    $("#createevent").attr('class', 'btn btn-primary zbtn');
+    $("#editevent").button().on("click", function () {
+        $("#dialog2").dialog("open");
+        $("#dialog2").attr('class', 'ui-widget-contentperso');
+    });
+    $("#editevent").attr('class', 'btn btn-primary zbtn');
+
+
+    $("#buttonmonthvalidation").button().on("click", function () {
+        var dateText = $('#datepicker3').val();
+        if (confirm("Voulez-vous valider les entrées du mois ? Aucune modification ne pourra être effectuée sur ce mois."))
+        {
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Valid_Month")",
+                data: { datepicker3: dateText},
+                success: function () {
+                    //alert("normalement c bon");
+                    document.location.reload();
+                },
+                error: function (req, status, error) {
+                    alert("date note valide recharge page or call a administrator");
+                }
+            });
+        }
+    });
+
+
+    $("#getmonth").button().on("click", function () {
+        getupdatelistbymonth($('#datepicker2').val());
+    });
+    $("#getmonth").attr('class', 'btn btn-primary zbtn');
+    //$("#coller").removeProperty("background");
+    $("#getmonth").removeAttr("background");
+
+
+
+    $("#coller").attr('class', 'btn btn-primary zbtn');
+    //$("#coller").removeProperty("background");
+    $("#coller").removeAttr("background");
+
+    $("#coller").button().on("click", function () {
+        //alert("coller");
+        var dateText = $('#datepicker2').val();
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("Coller")",
+            data: {datecoller: dateText},
+            success: function () {
+                //alert("normalement c bon");
+                ClosePopup();
+            },
+            error: function (req, status, error) {
+                alert("date note valide recharge page or call a administrator");
+            }
+        });
+    });
+
+    function ClosePopup(msg) {
+        var date = $('#datepicker2').val();
+        //eventDates[ new Date( date )] += 0;
+        //location.href = location.href;
+        var table = $('#listeday').DataTable();
+        $("#dialog").dialog("close");
+        $("#dialog2").dialog("close");
+        document.getElementById('dateofcreationfild').innerHTML = "";
+        document.getElementById('etapefild').innerHTML = "";
+        document.getElementById('commentefild').innerHTML = "";
+        document.getElementById('copier1').disabled = true;
+        document.getElementById("editevent").disabled = true;
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("getlistbydate")",
+            data: {datee:   date},
+            dataType: "json",
+            success: function (list) {
+                //console.log(list)
+                updatelist(list,date,0);
+                eventDates[new Date(date)] = hourday;
+                //$('#datepicker').datepicker("refresh");
+                getcolorlistbymonth(date);
+            },
+            error: function (req, status, error) {
+                document.getElementById('creat_button').hidden = true;
+                alert("date note valide recharge page or call a administrator");
+            }
+        });
+    }
+
+    function is_valid_month(){
+        var date = $('#datepicker3').val();
+        console.log("date is = " + date);
+        returnbool = true;
+        $.ajax({
+            async: false,
+            type: "GET",
+            url: "@Url.Action("is_Valid_Month")",
+            data: { datepicker3:   date},
+            dataType: "text",
+            success: function (bool) {
+                var table = $('#listeday').DataTable();
+                document.getElementById('hidenbeforselectdate').hidden = false;
+                if (bool == "true") {
+                    //var column = table.column(9).visible(false);
+                    document.getElementById('monthValidationButton').hidden = true;
+                    document.getElementById('creat_button').hidden = true;
+                    document.getElementById('infovalidation').innerHTML = "Le mois est déjà validé.";
+                    returnbool= true;
+                }
+                else {
+                    //var column = table.column(9).visible(true);
+                    document.getElementById('monthValidationButton').hidden = false;
+                    document.getElementById('creat_button').hidden = false;
+                    document.getElementById('infovalidation').innerHTML = "Merci de valider le mois une fois l'ensemble des événements créés.";
+                    returnbool= false;
+                }
+            },
+            error: function (req, status, error) {
+                alert("eror in month validation refresh page or call a administrator");
+            }
+        });
+        return returnbool;
+    }
+
+
+    function reportWindowSize() {
+        $(".ui-dialog").position({
+            my: "center top", at: "center top", of: "#bodyposition"
+        });
+    }
+    function updatelist(list,dateText,bymonth) {
+        var table = $('#listeday').DataTable();
+        table.clear().draw();
+        var hourday = 0;
+        var minday = 0;
+        for (i = 0; i < list.length; i += 1){
+            var dt = new Date(list[i].heures);
+            var dt2 = new Date(list[i].date);
+
+            optionstr = "<a href=\"" + "@this.Url.Action("Details","Tempo")" + "/" + list[i].id + "\">Details</a>";
+            if (!is_valid_month()) {
+                optionstr = "<a href=\"" + "@this.Url.Action("Delete","Tempo")" + "/" + list[i].id + "\">Supprimer</a>"
+            }
+            //copier = "<button id=\"copier\"  onclick=\"copiers('" + list[i].id + "')\" class=\"btn btn-primary zbtn\" style=\"margin: 12px\">Copier</button>";
+
+            if (bymonth) {
+                //table.column(0).visible(false);
+                table.column(1).visible(true);
+            }
+            else {
+                //table.column(0).visible(true);
+                table.column(1).visible(false);
+            }
+            table.row.add([
+                list[i].id,
+                dt2.getDate() + "/" + (dt2.getMonth() + 1) + "/" + dt2.getFullYear(),
+                list[i].type,
+                list[i].classe_str,
+                list[i].classe2_str,
+                list[i].classe3_str,
+                list[i].nature,
+                list[i].commente,
+                (dt.getHours() + dt.getMinutes() / 60).toFixed(2),
+                dt2.getMonth()+1,
+                dt2.getFullYear(),
+                optionstr,
+            ]).order([1, 'asc']).draw();
+            hourday += dt.getHours();
+            minday += dt.getMinutes();
+
+        }
+        hourday += ~~(minday / 60);
+        console.log("test = " + hourday);
+        document.getElementById('infodate').hidden = false;
+        document.getElementById('hourday').innerHTML = "Total des heures de la selection :  " + hourday + ":" + (minday%60);
+        document.getElementById("iframcreat").src = "@this.Url.Action("Create","Tempo")" + "?datepicker2=" + dateText;
+        sessionStorage.setItem("currentlist", JSON.stringify(list));
+    }
+    function getcolorlistbymonth(strdate) {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("getlistbyMonth")",
+            data: {datee: strdate},
+            success: function (list) {
+                eventDates = {};
+                for (i = 0; i < list.length; i += 1) {
+                    var toeventdate = new Date(list[i].date);
+                    var hourdate = new Date(list[i].heures)
+                    if (eventDates[toeventdate])
+                        eventDates[toeventdate] += hourdate.getHours();
+                    else
+                        eventDates[toeventdate] = hourdate.getHours();
+
+                    console.log("heures = " + eventDates[toeventdate.toString()]);
+                }
+                $('#datepicker').datepicker("refresh");
+            },
+            error: function (req, status, error) {
+                alert("date note valid e recharge page or call a administrator");
+            }
+        });
+    }
+    function getupdatelistbymonth(strdate) {
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("getlistbyMonth")",
+            data: {datee: strdate},
+            success: function (list) {
+                hourmons = 0;
+                for (i = 0; i < list.length; i += 1) {
+                    updatelist(list, strdate,1);
+                }
+            },
+            error: function (req, status, error) {
+                alert("date note valide recharge page or call a administrator");
+            }
+        });
+    }
+
+    function validconfirmation() {
+        confirm("Press a button!");
+    }
+
+    function copiers(idevent) {
+        console.log(idevent);
+        $.ajax({
+            type: "GET",
+            url: "@Url.Action("Copier")",
+            data: { eventid: idevent },
+            success: function () {
+                copiertxt = "Copier ! " + idevent;
+                $.notify(copiertxt, "success");
+            },
+            error: function (req, status, error) {
+                alert("date note valide recharge page or call a administrator");
+            }
+        });
+    }
+</script>

@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-Visea_Expense_Manager-538E9A4C-9D73-4821-A3EE-43EBC917AB43</UserSecretsId>
+    <WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+    <RootNamespace>Visea_Expense_Manager</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200306162732_mauvais type heur int to datetime.cs" />
+    <Compile Remove="Migrations\20200306162732_mauvais type heur int to datetime.Designer.cs" />
+    <Compile Remove="Migrations\20200306163153_mauvais type heur int to datetime apres suprretion de la table.cs" />
+    <Compile Remove="Migrations\20200306163153_mauvais type heur int to datetime apres suprretion de la table.Designer.cs" />
+    <Compile Remove="Migrations\20200306163302_erreur recreation de event.cs" />
+    <Compile Remove="Migrations\20200306163302_erreur recreation de event.Designer.cs" />
+    <Compile Remove="Migrations\20200306164122_refonte de la table apres plein de mauvaise manip.cs" />
+    <Compile Remove="Migrations\20200306164122_refonte de la table apres plein de mauvaise manip.Designer.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="fullcalendar" Version="3.9.0" />
+    <PackageReference Include="jQuery" Version="3.4.1" />
+    <PackageReference Include="jQuery.Fullcalendar" Version="3.9.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
+</Project>

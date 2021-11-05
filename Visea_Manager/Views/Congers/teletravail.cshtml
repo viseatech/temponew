@@ -1,0 +1,120 @@
+﻿@model Tuple<IEnumerable<Visea_Expense_Manager.Models.Teletravail>, IEnumerable<Visea_Expense_Manager.Models.User>>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.8.0/main.css">
+
+
+<div id='calendar'></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="~/js/jquery.dataTables.min.js" defer></script>
+<script src="~/js/dataTables.bootstrap4.min.js" defer></script>
+<script src="~/js/moment.min.js" defer></script>
+<script src="~/js/datetime-moment.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.8.0/main.js"></script>
+<script>
+    const json = '@Json.Serialize(Model.Item2)';
+    var list = JSON.parse(json);
+    console.log(list);
+    var employees = [];
+    var curruser = 0;
+    var currname = '@User.Identity.Name' ;
+    for (let i = 0; i < list.length; i++) {
+        addjson(employees, list[i], i)
+        if (currname == list[i].email) {
+            curruser = list[i].id;
+        }
+    }
+
+    var start; var end; var user; var eventid;
+
+    console.log(employees);
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
+        locale: 'fr',
+        firstDay: 1,
+        initialView: 'resourceTimelineMonth',
+        selectable: true,
+        resources: employees,
+ //       editable: true,
+        customButtons: {
+            myCustomButton: {
+                text: 'Ajouter teletravail',
+                click: function () {
+
+                    if (start != 'undefined' && end != 'undefined' && user == curruser ) {
+                        newevent =
+                        {
+                            title: "Teletravail",
+                            start: start,
+                            end: end,
+                            resourceId: user,
+                            User : '@User.Identity.Name'
+                        }
+                        $.ajax({
+                            type: "POST",
+                            url: "@Url.Action("AddteleTravail")",
+                            data: newevent,
+                            success: function (id) {
+                                newevent.resourceId = id;
+                                calendar.addEvent(newevent);
+                                calendar.refetchEvents();
+                            },
+                            error: function (req, status, error) {
+                                alert("probleme ajoue teletravail appeler un administrateur");
+                            }
+                        });
+
+                    }
+                }
+            },
+            deletbutton: {
+                text: 'supprimer',
+                click: function () {
+
+                    if (start != 'undefined' && end != 'undefined' && user == curruser) {
+                        var tmpressource = calendar.getEventById(eventid);
+                        tmpressource.remove();
+                    }
+                }
+            }
+        },
+        headerToolbar: {
+            left: 'myCustomButton deletbutton',
+            center: 'title',
+        },
+        select: function (info) {
+            start = info.startStr;
+            end = info.endStr;
+            user = info.resource.id ;
+
+        },
+        eventClick: function (event) {
+            if (event.myId) {
+                alert(myId);
+            }
+            eventid = event.myId;
+            console.log(eventid);
+        },
+    });
+    calendar.render();
+
+    const json2 = '@Json.Serialize(Model.Item1)';
+    var list2 = JSON.parse(json2);
+    console.log(list2);
+    for (let i = 0; i < list2.length; i++) {
+        calendar.addEvent(list2[i]);
+    }
+    
+
+    function addjson(jsonlist, obj,i) {
+        var jsonData = {};
+        jsonData['title'] = obj.name;
+        jsonData['id'] = obj.id;
+        jsonlist.push(jsonData);
+    }
+</script>

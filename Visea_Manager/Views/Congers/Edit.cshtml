@@ -1,0 +1,103 @@
+﻿@model Tuple<Visea_Expense_Manager.Models.Conger, IEnumerable<Visea_Expense_Manager.Models.Zfile>>
+
+@{
+    ViewData["Title"] = "Edit Absence";
+}
+
+<h1>Editer</h1>
+
+<h4>Absence</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Item1.Id" />
+            <div class="form-group">
+                Date de debut
+                <input type="date" name="Date_Debut" asp-for="Item1.Date_Debut" class="form-control" />
+                <span asp-validation-for="Item1.Date_Debut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+               Commence le Matin ou le Midi ?
+                <select name="Demijourne_Debut" asp-for="Item1.Demijourne_Debut" class="form-control">
+                    <option value="1">Matin</option>
+                    <option value="2">Midi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                Date de fin 
+                <input type="date" name="Date_Fin" asp-for="Item1.Date_Fin" class="form-control" />
+                <span asp-validation-for="Item1.Date_Fin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                Fini le Midi ou le Soire ?
+                <select  name="Demijourne_Fin" asp-for="Item1.Demijourne_Fin" class="form-control">
+                    <option value="3">Soire</option>
+                    <option value="2">Midi</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Type" class="control-label"></label>
+                <select name="Type" asp-for="Item1.Type" class="form-control">
+                    <option asp-for="Type" value="">--Please choose an option--</option>
+                    <option asp-for="Type" value="Congés payés">Congés payés</option>
+                    <option asp-for="Type" value="Congés C.S.S">Congés C.S.S</option>
+                    <option asp-for="Type" value="Congés Exceptionnel">Congés Exceptionnel</option>
+                    <option asp-for="Type" value="Congés Maternité">Congés Maternité</option>
+                    <option asp-for="Type" value="Congés Paternité">Congés Paternité</option>
+                    <option asp-for="Type" value="Maladie">Maladie</option>
+                    <option asp-for="Type" value="RTT">RTT</option>
+                    <option asp-for="Type" value="Récuperation">Récuperation</option>
+                    <option asp-for="Type" value="Autres">Autres</option>
+                </select>
+            </div>
+            <div class="form-group">
+                Etat
+                <select name="State" asp-for="Item1.State" class="form-control">
+                    <option value="">--Please choose an option--</option>
+                    <option value="En attente">En attente</option>
+                    <option value="Valider">Valider</option>
+                    <option value="Rejeter">Rejeter</option>
+                </select>
+            </div>
+            <div class="form-group">
+                Commentaire
+                <textarea name="commente" asp-for="Item1.commente" class="form-control"></textarea>
+                <span asp-validation-for="Item1.commente" class="text-danger"></span>
+            </div>
+            <input type="hidden" name="User" asp-for="Item1.User" />
+            <input type="hidden" name="Director" asp-for="Item1.Director" />
+            <input type="hidden" name="time" asp-for="Item1.time" />
+            <input type="hidden" name="UserId" asp-for="Item1.UserId" />
+            <div class="form-group">
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour a la liste</a>
+</div>
+<form method="post" enctype="multipart/form-data" asp-action="FileUpload">
+    <input type="file" name="listfile" multiple />
+    <input type="hidden" name="iid" asp-for="Item1.Id" />
+    <input type="submit" value="Ajouter un Fichier" class="btn btn-primary" /> |
+</form>
+@foreach (var item in Model.Item2)
+{
+    @if (Model.Item1.Id == item.NoteId)
+    {
+        <iframe src="@Url.Content("~/Files")/@item.Name" asp-append-version="true" width="100%" height="400">
+        </iframe>
+        <form asp-action="Deleteimg">
+            <input type="hidden" name="iid" asp-for="Item1.Id" />
+            <input type="hidden" name="zid" asp-for="@item.Id" />
+            <input type="submit" value="Supprimer le fichier" class="btn btn-danger" /> |
+        </form>
+    }
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

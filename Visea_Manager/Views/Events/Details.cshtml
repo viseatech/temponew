@@ -1,0 +1,95 @@
+﻿@model Visea_Expense_Manager.Models.Event
+
+@{
+    ViewData["Title"] = "Details Evénements";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Événement</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nature)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            Date de creation
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date_of_creation)
+        </dd>
+        <dt class="col-sm-2">
+            Type
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            Formation ou Client
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe_str)
+        </dd>
+        <dt class="col-sm-2">
+            Mission
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe2_str)
+        </dd>
+        <dt class="col-sm-2">
+            Objet
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe3_str)
+        </dd>
+        <dt class="col-sm-2">
+            Etape de la mission
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe4_str)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Heures)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => new TimeSpan(model.Heures.Hour, model.Heures.Minute, 0).TotalHours)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.commente)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.commente)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editer</a> |
+    <a asp-action="Index">Retour a la liste</a>
+</div>

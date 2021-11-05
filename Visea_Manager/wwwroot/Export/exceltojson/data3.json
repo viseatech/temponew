@@ -1,0 +1,2488 @@
+{
+    "name": "ORANGE OBS",
+    "list": {
+        "name": "ORANGE OBS - LVMH",
+        "list": {
+            "name": "ASSISTANCE TECHNIQUE",
+            "list": {
+                "name": "ASSISTANCE TECHNIQUE",
+                "list":
+            }
+        },
+        {
+            "name": "Migration LVMH",
+            "list": {
+                "name": "Migration",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "STEF",
+    "list": {
+        "name": "SAP DM",
+        "list": {
+            "name": "Disclosure management",
+            "list": {
+                "name": "1-Initialisation",
+                "list":
+            },
+            {
+                "name": "2-Formation",
+                "list":
+            }
+        },
+        {
+            "name": "Assistance go-live",
+            "list": {
+                "name": "Assistance go-live",
+                "list":
+            }
+        },
+        {
+            "name": "Taxonomie",
+            "list": {
+                "name": "1-Création",
+                "list":
+            },
+            {
+                "name": "2-Balisage",
+                "list":
+            }
+        },
+        {
+            "name": "Pilotage",
+            "list": {
+                "name": "Pilotage",
+                "list":
+            }
+        },
+        {
+            "name": "Installation",
+            "list": {
+                "name": "Installation",
+                "list":
+            }
+        },
+        {
+            "name": "Initialisation go-live",
+            "list": {
+                "name": "Initialisation go-live",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "BFC",
+        "list": {
+            "name": "Split DB",
+            "list": {
+                "name": "Split DB",
+                "list":
+            }
+        },
+        {
+            "name": "GDP",
+            "list": {
+                "name": "GDP",
+                "list":
+            }
+        },
+        {
+            "name": "Enrichissement paramétrage",
+            "list": {
+                "name": "Autres",
+                "list":
+            }
+        },
+        {
+            "name": "FIM-DS",
+            "list": {
+                "name": "FIM-DS",
+                "list":
+            }
+        },
+        {
+            "name": "Audit",
+            "list": {
+                "name": "Audit",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "VINCI",
+    "list": {
+        "name": "Assistance conso",
+        "list": {
+            "name": "Rapport Annuel",
+            "list": {
+                "name": "Annexe financiu00e8re",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "IMMOBILIER",
+        "list": {
+            "name": "Assistance Conso",
+            "list": {
+                "name": "Assistance Conso",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Développement spécifique",
+        "list": {
+            "name": "RPA",
+            "list": {
+                "name": "RPA",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "BPCE",
+    "list": {
+        "name": "Lot 1 - IFRS9",
+        "list": {
+            "name": "Prudentiel",
+            "list": {
+                "name": "Tests et recettes",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "IFRS17",
+        "list": {
+            "name": "Cadrage",
+            "list": {
+                "name": "Cadrage",
+                "list":
+            }
+        },
+        {
+            "name": "Spécifications",
+            "list": {
+                "name": "MDD",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Lot 2 - Vie courante",
+        "list": {
+            "name": "Evolutions trimestrielles",
+            "list": {
+                "name": "Evolutions trimestrielles",
+                "list":
+            }
+        },
+        {
+            "name": "Exploitation courante",
+            "list": {
+                "name": "Exploitation courante",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance MOA BFC",
+        "list": {
+            "name": "Assistance MOA BFC",
+            "list": {
+                "name": "Assistance MOA BFC",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "BUREAU VERITAS",
+    "list": {
+        "name": "Migration 10.1",
+        "list": {
+            "name": "Migration 10.1",
+            "list": {
+                "name": "03.Installation PROD",
+                "list":
+            },
+            {
+                "name": "04.Mise en production",
+                "list":
+            },
+            {
+                "name": "01.Analyse",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "IMERYS",
+    "list": {
+        "name": "TMA IT",
+        "list": {
+            "name": "Hotline IT",
+            "list": {
+                "name": "Hotline IT",
+                "list":
+            }
+        },
+        {
+            "name": "Evolution IT",
+            "list": {
+                "name": "Evolution IT",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "PAYROLL",
+        "list": {
+            "name": "Analyse",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Développement",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "NATIXIS",
+    "list": {
+        "name": "Migration FC 10.1",
+        "list": {
+            "name": "Installation et migration",
+            "list": {
+                "name": "Go Live",
+                "list":
+            },
+            {
+                "name": "Installation Production",
+                "list":
+            },
+            {
+                "name": "Gestion de Projet",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "SNPE",
+    "list": {
+        "name": "02-BFC 7.5",
+        "list": {
+            "name": "Maintenance simple",
+            "list": {
+                "name": "Assistance u00e0 utilisation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "01-ASP BFC 7.5",
+        "list": {
+            "name": "01-Hotline",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "DALKIA",
+    "list": {
+        "name": "Hotline TMA",
+        "list": {
+            "name": "Hotline TMA",
+            "list": {
+                "name": "Hotline TMA",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Migration",
+        "list": {
+            "name": "Gestion de projet",
+            "list": {
+                "name": "Gestion de projet",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "VISEA",
+    "list": {
+        "name": "Maintenance interne",
+        "list": {
+            "name": "Réseau Visea",
+            "list": {
+                "name": "Maintenance",
+                "list":
+            },
+            {
+                "name": "Suivi technique",
+                "list":
+            },
+            {
+                "name": "Installation Serveur",
+                "list":
+            }
+        },
+        {
+            "name": "TEMPO",
+            "list": {
+                "name": "Développement",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Management",
+        "list": {
+            "name": "Management",
+            "list": {
+                "name": "Management",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Visea Technique",
+        "list": {
+            "name": "Suivi Missions",
+            "list": {
+                "name": "Reunions",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Appels d'offres Propositions",
+        "list": {
+            "name": "01 AO",
+            "list": {
+                "name": "02 Rédaction",
+                "list":
+            },
+            {
+                "name": "01 Analyse",
+                "list":
+            },
+            {
+                "name": "04 Suivi",
+                "list":
+            },
+            {
+                "name": "03 Réunion",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Etudes, Prospects Visea",
+        "list": {
+            "name": "Labo Visea technique",
+            "list": {
+                "name": "Etude solution",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Veille technologique",
+        "list": {
+            "name": "SAP EPM 10",
+            "list": {
+                "name": "Etude",
+                "list":
+            }
+        },
+        {
+            "name": "Autres",
+            "list": {
+                "name": "Analyse",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Administratif",
+        "list": {
+            "name": "Facturation",
+            "list": {
+                "name": "Facturation",
+                "list":
+            }
+        },
+        {
+            "name": "Administratif",
+            "list": {
+                "name": "Saisie temps",
+                "list":
+            },
+            {
+                "name": "Administratif",
+                "list":
+            }
+        },
+        {
+            "name": "Gestion ressources",
+            "list": {
+                "name": "03 Point interne",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "RUBIS VITOGAZ",
+    "list": {
+        "name": "BFC",
+        "list": {
+            "name": "HOTLINE",
+            "list": {
+                "name": "Technique",
+                "list":
+            },
+            {
+                "name": "Fonctionnel",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "BI",
+        "list": {
+            "name": "Développement",
+            "list": {
+                "name": "Dashboard",
+                "list":
+            },
+            {
+                "name": "EPM addin",
+                "list":
+            },
+            {
+                "name": "BFC",
+                "list":
+            },
+            {
+                "name": "Cubes designer - univers",
+                "list":
+            }
+        },
+        {
+            "name": "Formation WEBI",
+            "list": {
+                "name": "Formation",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse",
+            "list": {
+                "name": "Analyse",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "ASP",
+        "list": {
+            "name": "Technique",
+            "list": {
+                "name": "Installation plateforme",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CEVA SANTE ANIMALE",
+    "list": {
+        "name": "Migration SAP EPM 10.1",
+        "list": {
+            "name": "Installation et migration",
+            "list": {
+                "name": "2 - Installation Production",
+                "list":
+            },
+            {
+                "name": "5 - Gestion de projet",
+                "list":
+            },
+            {
+                "name": "4 - Go Live",
+                "list":
+            },
+            {
+                "name": "3 - Recette fonctionnelle",
+                "list":
+            },
+            {
+                "name": "1 - Analyse et cadrage",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "ERAMET",
+    "list": {
+        "name": "Migration ",
+        "list": {
+            "name": "Migration FC-FIM",
+            "list": {
+                "name": "01.Analyse",
+                "list":
+            },
+            {
+                "name": "02.Installation QUAL",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance",
+        "list": {
+            "name": "Technique",
+            "list": {
+                "name": "Technique",
+                "list":
+            }
+        },
+        {
+            "name": "Fonctionnelle",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "TMA",
+        "list": {
+            "name": "Technique",
+            "list": {
+                "name": "Technique",
+                "list":
+            }
+        },
+        {
+            "name": "Fonctionnelle",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "PALIER DMM",
+        "list": {
+            "name": "Reconstitution historique",
+            "list": {
+                "name": "Ecritures et validation",
+                "list":
+            },
+            {
+                "name": "Formalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Réunion",
+            "list": {
+                "name": "Réunion client",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Refonte PDC",
+        "list": {
+            "name": "Mise en oeuvre",
+            "list": {
+                "name": "réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Recette",
+            "list": {
+                "name": "réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse",
+            "list": {
+                "name": "réalisation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "BANIJAY",
+    "list": {
+        "name": "Integration Endemol",
+        "list": {
+            "name": "Technique",
+            "list": {
+                "name": "Mise u00e0 niveau plateforme",
+                "list":
+            },
+            {
+                "name": "Installation BI",
+                "list":
+            }
+        },
+        {
+            "name": "Développement BI",
+            "list": {
+                "name": "POC",
+                "list":
+            },
+            {
+                "name": "Param BI",
+                "list":
+            },
+            {
+                "name": "Analyse BI",
+                "list":
+            },
+            {
+                "name": "Formation",
+                "list":
+            },
+            {
+                "name": "BI",
+                "list":
+            },
+            {
+                "name": "Etats master",
+                "list":
+            }
+        },
+        {
+            "name": "Suivi Projet",
+            "list": {
+                "name": "Suivi",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse",
+            "list": {
+                "name": "Spécifications",
+                "list":
+            },
+            {
+                "name": "Bilan d'ouverture",
+                "list":
+            },
+            {
+                "name": "Preparation",
+                "list":
+            },
+            {
+                "name": "Ateliers",
+                "list":
+            },
+            {
+                "name": "COA",
+                "list":
+            }
+        },
+        {
+            "name": "Développement BFC",
+            "list": {
+                "name": "Autres analyses spécifiques",
+                "list":
+            },
+            {
+                "name": "Autres",
+                "list":
+            },
+            {
+                "name": "ACT",
+                "list":
+            },
+            {
+                "name": "Traitements",
+                "list":
+            },
+            {
+                "name": "Program",
+                "list":
+            },
+            {
+                "name": "BGT",
+                "list":
+            },
+            {
+                "name": "Restitutions BFC",
+                "list":
+            }
+        },
+        {
+            "name": "Déploiement",
+            "list": {
+                "name": "Support",
+                "list":
+            },
+            {
+                "name": "Documentation",
+                "list":
+            },
+            {
+                "name": "Formation",
+                "list":
+            }
+        },
+        {
+            "name": "RDH",
+            "list": {
+                "name": "Données liasse",
+                "list":
+            },
+            {
+                "name": "Préparation",
+                "list":
+            },
+            {
+                "name": "Validation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "01-Assistance",
+        "list": {
+            "name": "03-Maintenance évolutive",
+            "list": {
+                "name": "01-Technique",
+                "list":
+            },
+            {
+                "name": "02-Fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "01-Hotline",
+            "list": {
+                "name": "01-Technique",
+                "list":
+            },
+            {
+                "name": "02-Fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "02-Maintenance simple",
+            "list": {
+                "name": "02-Fonctionnelle",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "BFC",
+        "list": {
+            "name": "Support",
+            "list": {
+                "name": "Documentation",
+                "list":
+            }
+        },
+        {
+            "name": "Actual",
+            "list": {
+                "name": "Stucture",
+                "list":
+            },
+            {
+                "name": "Documents",
+                "list":
+            }
+        },
+        {
+            "name": "Budget/F2/Plan",
+            "list": {
+                "name": "Référenciel",
+                "list":
+            },
+            {
+                "name": "Documents",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Migration",
+        "list": {
+            "name": "Migration Qualif",
+            "list": {
+                "name": "Support",
+                "list":
+            }
+        },
+        {
+            "name": "Migration Prod",
+            "list": {
+                "name": "Support",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance Conso",
+        "list": {
+            "name": "Assistance Conso",
+            "list": {
+                "name": "Travaux Conso",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "TRANSDEV",
+    "list": {
+        "name": "01 TMA",
+        "list": {
+            "name": "01 Hotline",
+            "list": {
+                "name": "02 Technique",
+                "list":
+            },
+            {
+                "name": "01 Fonctionnel",
+                "list":
+            }
+        },
+        {
+            "name": "02 Evolutions",
+            "list": {
+                "name": "01 Fonctionnel",
+                "list":
+            }
+        },
+        {
+            "name": "03 Gestion de projet",
+            "list": {
+                "name": "01 Gestion de projet",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "VERALLIA",
+    "list": {
+        "name": "Migration 10.1 SP9",
+        "list": {
+            "name": "Recette Fonctionnelle",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            },
+            {
+                "name": "Préparation ",
+                "list":
+            }
+        },
+        {
+            "name": "Installation technique",
+            "list": {
+                "name": "Installation technique",
+                "list":
+            }
+        },
+        {
+            "name": "Gestion de projet",
+            "list": {
+                "name": "Gestion de projet",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "TMA",
+        "list": {
+            "name": "Hotline fonctionnelle",
+            "list": {
+                "name": "Hotline fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "Maintenance Evolutive Fonctionnelle",
+            "list": {
+                "name": "Maintenance Evolutive Fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "Hotline IT",
+            "list": {
+                "name": "Hotline IT",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance consolidation ",
+        "list": {
+            "name": "Assistance consolidation",
+            "list": {
+                "name": "Assistance consolidation ",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Installation BFC 10.1",
+        "list": {
+            "name": "Etape2",
+            "list": {
+                "name": "Phase 7 - Installation Développement",
+                "list":
+            }
+        },
+        {
+            "name": "Etape1",
+            "list": {
+                "name": "Phase 1 - Cadrage et Analyse",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "EDITIS",
+    "list": {
+        "name": "01 Migration BFC Analytics",
+        "list": {
+            "name": "07 Gestion de Projet",
+            "list": {
+                "name": "01 Point de suivi",
+                "list":
+            },
+            {
+                "name": "03 Redaction",
+                "list":
+            }
+        },
+        {
+            "name": "04 Installation PROD",
+            "list": {
+                "name": "Pré-requis & Installation",
+                "list":
+            },
+            {
+                "name": "Documentation",
+                "list":
+            },
+            {
+                "name": "Déploiement des solutions CD",
+                "list":
+            }
+        },
+        {
+            "name": "02 Installation Test",
+            "list": {
+                "name": "Pré-requis & Installation",
+                "list":
+            },
+            {
+                "name": "Documentation",
+                "list":
+            },
+            {
+                "name": "Migration des bases",
+                "list":
+            },
+            {
+                "name": "Conf. authentification & sécurité",
+                "list":
+            }
+        },
+        {
+            "name": "05 Validation PROD",
+            "list": {
+                "name": "Tests techniques",
+                "list":
+            },
+            {
+                "name": "Tests connexion & impression",
+                "list":
+            },
+            {
+                "name": "Tests fonctionnels",
+                "list":
+            }
+        },
+        {
+            "name": "03 Validation Test",
+            "list": {
+                "name": "Ajust. fonctionnels et tests BFC",
+                "list":
+            }
+        },
+        {
+            "name": "01 Cadrage et Analyse",
+            "list": {
+                "name": "01 Archit tech et cadre migr",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "TMA",
+    "list": {
+        "name": "Client non identifié",
+        "list": {
+            "name": "Assistance/formation autre consultant",
+            "list": {
+                "name": "Traitement",
+                "list":
+            }
+        },
+        {
+            "name": "Disponibilité TMA",
+            "list": {
+                "name": "Attente ticket",
+                "list":
+            }
+        },
+        {
+            "name": "Réunion-coordination",
+            "list": {
+                "name": "Traitement",
+                "list":
+            }
+        },
+        {
+            "name": "Facturation et reporting des temps",
+            "list": {
+                "name": "Traitement",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "Yves Rocher",
+    "list": {
+        "name": "01-Migration BFC 10",
+        "list": {
+            "name": "02-03-Install Qualif,validation, migration",
+            "list": {
+                "name": "03-Migration bases Qualif",
+                "list":
+            },
+            {
+                "name": "01-Validation install pérequis Qualif",
+                "list":
+            },
+            {
+                "name": "02-InstallBFC 10 Qualif",
+                "list":
+            },
+            {
+                "name": "05-Ajust. fonctionnels, tests not regression",
+                "list":
+            }
+        },
+        {
+            "name": "01-Analyse,études DAT",
+            "list": {
+                "name": "02-Plan test migration",
+                "list":
+            },
+            {
+                "name": "01-Etude technique, DAT",
+                "list":
+            },
+            {
+                "name": "03-Suivi Projet",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Mise u00e0 jour documents",
+        "list": {
+            "name": "Mise u00e0 jour documents",
+            "list": {
+                "name": "Mise u00e0 jour documents",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "UNIBAIL",
+    "list": {
+        "name": "Assistance BFC",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Technique",
+                "list":
+            },
+            {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Westfield Déploiement US",
+        "list": {
+            "name": "RDH",
+            "list": {
+                "name": "Bilan d'ouverture",
+                "list":
+            },
+            {
+                "name": "Assistance",
+                "list":
+            }
+        },
+        {
+            "name": "Suivi Projet",
+            "list": {
+                "name": "Suivi",
+                "list":
+            },
+            {
+                "name": "Comités",
+                "list":
+            }
+        },
+        {
+            "name": "Développement",
+            "list": {
+                "name": "Enrichissement BFC",
+                "list":
+            }
+        },
+        {
+            "name": "Recette",
+            "list": {
+                "name": "Analytics",
+                "list":
+            }
+        },
+        {
+            "name": "Documentation ",
+            "list": {
+                "name": "Documentation ",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse",
+            "list": {
+                "name": "Ateliers",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "FIM - BFC - BPC",
+        "list": {
+            "name": "Analyse et conseil",
+            "list": {
+                "name": "Analyse et conseil",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "2019 Refonte",
+        "list": {
+            "name": "Réalisation et tests",
+            "list": {
+                "name": "Traitements",
+                "list":
+            },
+            {
+                "name": "Référentiels",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse et Conception",
+            "list": {
+                "name": "Atelier",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance consolidation",
+        "list": {
+            "name": "Assistance consolidation",
+            "list": {
+                "name": "Assistance consolidation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "02-Extended Analytics",
+        "list": {
+            "name": "01 Analyse ",
+            "list": {
+                "name": "Besoins fonctionnels",
+                "list":
+            }
+        },
+        {
+            "name": "02 Réalisation",
+            "list": {
+                "name": "Cubes",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "GALERIES LAFAYETTE",
+    "list": {
+        "name": "2 TMA",
+        "list": {
+            "name": "01 Hotline",
+            "list": {
+                "name": "02 Technique",
+                "list":
+            },
+            {
+                "name": "01 Fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "03 Gestion projet",
+            "list": {
+                "name": "01 Gestion projet",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "BIOMERIEUX",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Administration courante",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Evolution de paramétrage",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Gdp",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "EVOLUTION",
+        "list": {
+            "name": "Nouveaux développements",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        },
+        {
+            "name": "Finance 2.0",
+            "list": {
+                "name": "Gestion de projet",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "NEXANS",
+    "list": {
+        "name": "K-IFRS16",
+        "list": {
+            "name": "Mise en Place K-IFRS16",
+            "list": {
+                "name": "Travaux de mise en place",
+                "list":
+            },
+            {
+                "name": "Ateliers fonctionnels",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "NEXANS TMA",
+        "list": {
+            "name": "Evolution",
+            "list": {
+                "name": "Rules",
+                "list":
+            },
+            {
+                "name": "Webform/Reports",
+                "list":
+            }
+        },
+        {
+            "name": "Question",
+            "list": {
+                "name": "Explication",
+                "list":
+            }
+        },
+        {
+            "name": "Administration Courante",
+            "list": {
+                "name": "Administration Courante",
+                "list":
+            }
+        },
+        {
+            "name": "Project Management",
+            "list": {
+                "name": "Project Management",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "ADMIN NEXCORE",
+        "list": {
+            "name": "HFM",
+            "list": {
+                "name": "Formation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CEVA LOGISTICS",
+    "list": {
+        "name": "WhatsCash 1 phase 2 u2013 CFS",
+        "list": {
+            "name": "Analyse ",
+            "list": {
+                "name": "Analyse ",
+                "list":
+            }
+        },
+        {
+            "name": "Build",
+            "list": {
+                "name": "  Metadatas et calculs",
+                "list":
+            },
+            {
+                "name": "Forms",
+                "list":
+            }
+        },
+        {
+            "name": "Suivi de projet ",
+            "list": {
+                "name": "Suivi de projet ",
+                "list":
+            }
+        },
+        {
+            "name": "Tests données histo ",
+            "list": {
+                "name": "Tests données histo ",
+                "list":
+            }
+        },
+        {
+            "name": "Support go live ",
+            "list": {
+                "name": "Support go live ",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "TMA",
+        "list": {
+            "name": "Users support",
+            "list": {
+                "name": "Central Users",
+                "list":
+            },
+            {
+                "name": "Local Users",
+                "list":
+            }
+        },
+        {
+            "name": "Corrective maintenance",
+            "list": {
+                "name": "Controlling",
+                "list":
+            },
+            {
+                "name": "Consolidation",
+                "list":
+            },
+            {
+                "name": "Users assistance",
+                "list":
+            }
+        },
+        {
+            "name": "Evolutive maintenance",
+            "list": {
+                "name": "Analysis",
+                "list":
+            },
+            {
+                "name": "Set up and testing",
+                "list":
+            }
+        },
+        {
+            "name": "Project management",
+            "list": {
+                "name": "Project management",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "WhatsCash 2 - Budget FCF",
+        "list": {
+            "name": "Build",
+            "list": {
+                "name": "Forms",
+                "list":
+            },
+            {
+                "name": "Metadatas et calculs",
+                "list":
+            }
+        },
+        {
+            "name": "Suivi de projet ",
+            "list": {
+                "name": "Suivi de projet ",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse ",
+            "list": {
+                "name": "Analyse ",
+                "list":
+            }
+        },
+        {
+            "name": "Support go live ",
+            "list": {
+                "name": "Support go live ",
+                "list":
+            }
+        },
+        {
+            "name": "Tests ",
+            "list": {
+                "name": "Tests ",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance Reporting Client",
+        "list": {
+            "name": "Assistance Reporting Client",
+            "list": {
+                "name": "Assistance Reporting Client",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance consolidation ",
+        "list": {
+            "name": "Assistance consolidation ",
+            "list": {
+                "name": "Assistance consolidation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CARREFOUR FRANCE",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Corrections",
+            "list": {
+                "name": "Autres (préciser)",
+                "list":
+            },
+            {
+                "name": "FDMee",
+                "list":
+            },
+            {
+                "name": "RECORD",
+                "list":
+            }
+        },
+        {
+            "name": "Suivi",
+            "list": {
+                "name": "Suivi divers",
+                "list":
+            },
+            {
+                "name": "Réunion",
+                "list":
+            }
+        },
+        {
+            "name": "Evolutions",
+            "list": {
+                "name": "RECORD",
+                "list":
+            },
+            {
+                "name": "FDMee",
+                "list":
+            }
+        },
+        {
+            "name": "Administration courante",
+            "list": {
+                "name": "Support utilisateurs",
+                "list":
+            },
+            {
+                "name": "Procédure ouverture",
+                "list":
+            },
+            {
+                "name": "Procédure fermeture",
+                "list":
+            }
+        },
+        {
+            "name": "Astreinte",
+            "list": {
+                "name": "Forfait jour d'astreinte",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Migration HFM Secu & BDD 19C",
+        "list": {
+            "name": "Suivi",
+            "list": {
+                "name": "Suivi",
+                "list":
+            }
+        },
+        {
+            "name": "Préparation",
+            "list": {
+                "name": "Préparation",
+                "list":
+            }
+        },
+        {
+            "name": "Réalisation DEV",
+            "list": {
+                "name": "Réalisation DEV",
+                "list":
+            }
+        },
+        {
+            "name": "Réalisation RECETTE",
+            "list": {
+                "name": "Réalisation RECETTE",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "KONVERGENCE",
+    "list": {
+        "name": "IFRS 16",
+        "list": {
+            "name": "IFRS 16",
+            "list": {
+                "name": "IFRS 16",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "REXEL",
+    "list": {
+        "name": "Refonte Prévisionnel",
+        "list": {
+            "name": "Travaux préalables",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance conso",
+        "list": {
+            "name": "Assistance conso",
+            "list": {
+                "name": "Assistance conso",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "HEC BFC Migration",
+        "list": {
+            "name": "AMOA",
+            "list": {
+                "name": "Assistance",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "BEL FROMAGERIES",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Fonctionnel",
+                "list":
+            }
+        },
+        {
+            "name": "Maintenance Evolutive",
+            "list": {
+                "name": "Analyse",
+                "list":
+            },
+            {
+                "name": "Validation",
+                "list":
+            },
+            {
+                "name": "Réalisation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "Lucien Barriu00e8re",
+    "list": {
+        "name": "01-ASP BFC 7.5",
+        "list": {
+            "name": "01-Hotline",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "SEB",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Hotline & corrective",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            },
+            {
+                "name": "Technique",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "TOTAL",
+    "list": {
+        "name": "03-Assistance Conso",
+        "list": {
+            "name": "Assistance Conso",
+            "list": {
+                "name": "Assistance Conso",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "05-TFT",
+        "list": {
+            "name": "Analyse",
+            "list": {
+                "name": "Analyse",
+                "list":
+            }
+        },
+        {
+            "name": "Paramétrage",
+            "list": {
+                "name": "Assistance",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "AIRFRANCE KLM",
+    "list": {
+        "name": "Hotline",
+        "list": {
+            "name": "Holtine",
+            "list": {
+                "name": "Paramétrage",
+                "list":
+            },
+            {
+                "name": "Assitance utilisateur",
+                "list":
+            },
+            {
+                "name": "Gdp",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Evolution",
+        "list": {
+            "name": "Paramétrage",
+            "list": {
+                "name": "Paramétrage",
+                "list":
+            },
+            {
+                "name": "Analyse",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "NEOVIA",
+    "list": {
+        "name": "Hotline",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Hotline",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "France Télévision",
+    "list": {
+        "name": "ASP",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "Maintenance évolutive",
+            "list": {
+                "name": "Technique",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "TIKEHAU",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Fonctionnel ",
+            "list": {
+                "name": "Correction",
+                "list":
+            },
+            {
+                "name": "Evolution",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance Conso",
+        "list": {
+            "name": "Assistance Conso",
+            "list": {
+                "name": "Assistance Conso",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Implémentation BFC",
+        "list": {
+            "name": "Gestion de projet",
+            "list": {
+                "name": "Suivi divers",
+                "list":
+            }
+        },
+        {
+            "name": "Paramétrage",
+            "list": {
+                "name": "Paramétrage",
+                "list":
+            }
+        },
+        {
+            "name": "Recette fonctionnelle",
+            "list": {
+                "name": "Assistance recette",
+                "list":
+            }
+        },
+        {
+            "name": "Formation utilisateurs",
+            "list": {
+                "name": "Assistance rédaction ",
+                "list":
+            }
+        },
+        {
+            "name": "Documentation ",
+            "list": {
+                "name": "Rédaction documentation ",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CARREFOUR BRESIL",
+    "list": {
+        "name": "Doc et Formation",
+        "list": {
+            "name": "Doc et Formation",
+            "list": {
+                "name": "Doc et Formation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "DAHER",
+    "list": {
+        "name": "Assistance",
+        "list": {
+            "name": "Sans objet",
+            "list": {
+                "name": "Sans objet",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "Bolloré",
+    "list": {
+        "name": "Assistance Conso",
+        "list": {
+            "name": "Assistance consolidation",
+            "list": {
+                "name": "Assistance consolidation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "01 Audit BFC 10.0",
+        "list": {
+            "name": "02 Audit env PROD",
+            "list": {
+                "name": "01 Audit",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Division Logistique",
+        "list": {
+            "name": "Assistance Conso",
+            "list": {
+                "name": "Assistance Conso",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Technique",
+        "list": {
+            "name": "BFC",
+            "list": {
+                "name": "Installation SP",
+                "list":
+            }
+        },
+        {
+            "name": "Interface",
+            "list": {
+                "name": "Migration BFC",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Migration FC",
+        "list": {
+            "name": "Installation Test",
+            "list": {
+                "name": "Installation Test",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "Air Liquide",
+    "list": {
+        "name": "Assistance",
+        "list": {
+            "name": "Assistance",
+            "list": {
+                "name": "Assistance fonctionnelle",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "ALIZENT",
+        "list": {
+            "name": "Assistance conso",
+            "list": {
+                "name": "Assistance conso",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "TMA",
+        "list": {
+            "name": "Rouges & Noires",
+            "list": {
+                "name": "Hotline - Remote",
+                "list":
+            },
+            {
+                "name": "Hotline - On site",
+                "list":
+            }
+        },
+        {
+            "name": "Additional services",
+            "list": {
+                "name": "Meeting",
+                "list":
+            },
+            {
+                "name": "Paramétrage",
+                "list":
+            },
+            {
+                "name": "Hotline",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "ROUGIER",
+    "list": {
+        "name": "Assistance consolidation ",
+        "list": {
+            "name": "Assistance consolidation",
+            "list": {
+                "name": "Assistance consolidation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CARREFOUR INTERNATIONAL",
+    "list": {
+        "name": "Support admin fonct",
+        "list": {
+            "name": "Support admin support",
+            "list": {
+                "name": "Support admin support",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Lot 5 - Déploiement",
+        "list": {
+            "name": "Accompagnement des filiales",
+            "list": {
+                "name": "Aide u00e0 l'exploitation filiale",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "VICAT",
+    "list": {
+        "name": "Refonte 2019",
+        "list": {
+            "name": "SURF - Avenant 1",
+            "list": {
+                "name": "Gdp",
+                "list":
+            },
+            {
+                "name": "Assistance démarrage",
+                "list":
+            },
+            {
+                "name": "Rolling Forecast",
+                "list":
+            },
+            {
+                "name": "RDH supplémentaire",
+                "list":
+            },
+            {
+                "name": "Documentation",
+                "list":
+            },
+            {
+                "name": "Dépassement projet initial",
+                "list":
+            }
+        },
+        {
+            "name": "SIRoCC02",
+            "list": {
+                "name": "Analyse",
+                "list":
+            },
+            {
+                "name": "Mise en oeuvre",
+                "list":
+            },
+            {
+                "name": "Gestion de projet",
+                "list":
+            },
+            {
+                "name": "Recette",
+                "list":
+            }
+        },
+        {
+            "name": "SURF - Avenant 2",
+            "list": {
+                "name": "Assistance",
+                "list":
+            },
+            {
+                "name": "Gestion de projet",
+                "list":
+            },
+            {
+                "name": "Evolutions CDG",
+                "list":
+            }
+        },
+        {
+            "name": "SURF - Avenant 3",
+            "list": {
+                "name": "Gestion de projet",
+                "list":
+            },
+            {
+                "name": "Assistance",
+                "list":
+            },
+            {
+                "name": "Ajout CC & ratio",
+                "list":
+            }
+        },
+        {
+            "name": "LOT2 - PARAM",
+            "list": {
+                "name": "Recette",
+                "list":
+            },
+            {
+                "name": "Mise en oeuvre",
+                "list":
+            }
+        },
+        {
+            "name": "gestion de projet",
+            "list": {
+                "name": "Comité",
+                "list":
+            },
+            {
+                "name": "Coordination",
+                "list":
+            }
+        },
+        {
+            "name": "Analyse et conception",
+            "list": {
+                "name": "Atelier",
+                "list":
+            },
+            {
+                "name": "Conception",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "TMA",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Holtine",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "TDF",
+    "list": {
+        "name": "ASP BFC",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        },
+        {
+            "name": "Maintenance simple",
+            "list": {
+                "name": "Fonctionnelle",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "ELSAN",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Evolutif",
+            "list": {
+                "name": "Evolutif",
+                "list":
+            }
+        },
+        {
+            "name": "Hotline & Correctif",
+            "list": {
+                "name": "Fonctionnel",
+                "list":
+            },
+            {
+                "name": "Techinque",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "SUCRES & DENREES",
+    "list": {
+        "name": "Assistance",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Hotline",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "DELOITTE",
+    "list": {
+        "name": "CIF",
+        "list": {
+            "name": "Labo VISEA",
+            "list": {
+                "name": "Accu00e8s",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "LVMH",
+    "list": {
+        "name": "Support Team SyRUS",
+        "list": {
+            "name": "Support Team SyRUS",
+            "list": {
+                "name": "Support Team SyRUS",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "DIAM",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Support & hotline",
+            "list": {
+                "name": "Hotline",
+                "list":
+            },
+            {
+                "name": "Correction paramétrage",
+                "list":
+            }
+        },
+        {
+            "name": "Evolutions",
+            "list": {
+                "name": "Réalisation",
+                "list":
+            }
+        }
+    },
+    {
+        "name": "Assistance conso",
+        "list": {
+            "name": "Assistance conso",
+            "list": {
+                "name": "Assistance conso",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CARREFOUR BANQUE",
+    "list": {
+        "name": "Assistance administration fonctionnelle",
+        "list": {
+            "name": "2.Administration fonctionnelle",
+            "list": {
+                "name": "2.2. CR SFA",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "BACCARAT",
+    "list": {
+        "name": "Assistance consolidation",
+        "list": {
+            "name": "Assistance consolidation",
+            "list": {
+                "name": "Assistance consolidation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "AGRIAL",
+    "list": {
+        "name": "ICS",
+        "list": {
+            "name": "Cadrage",
+            "list": {
+                "name": "Analyse",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "Carrefour",
+    "list": {
+        "name": "Carrefour International",
+        "list": {
+            "name": "Accompagnement refonte",
+            "list": {
+                "name": "Autres",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CMA-CGM",
+    "list": {
+        "name": "Intégration CEVA Logistics",
+        "list": {
+            "name": "Gestion de projet",
+            "list": {
+                "name": "Suivi divers",
+                "list":
+            },
+            {
+                "name": "Comité",
+                "list":
+            },
+            {
+                "name": "Préparation comité",
+                "list":
+            }
+        },
+        {
+            "name": "Phase 0 - Cadrage et initialistion",
+            "list": {
+                "name": "Cadrage et Initialisation",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "DERICHEBOURG",
+    "list": {
+        "name": "DWH",
+        "list": {
+            "name": "DWH",
+            "list": {
+                "name": "DWH",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "CIF",
+    "list": {
+        "name": "ASP",
+        "list": {
+            "name": "Assistance",
+            "list": {
+                "name": "Technique",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "MGEN",
+    "list": {
+        "name": "TMA",
+        "list": {
+            "name": "Hotline",
+            "list": {
+                "name": "Technique",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "AGEFOS",
+    "list": {
+        "name": "Consolidation 2019.12",
+        "list": {
+            "name": "Suivi",
+            "list": {
+                "name": "Suivi",
+                "list":
+            }
+        }
+    }
+},
+{
+    "name": "SMA",
+    "list": {
+        "name": "Formation",
+        "list": {
+            "name": "SAP FC",
+            "list": {
+                "name": "Préparation",
+                "list":
+            }
+        }
+    }
+}

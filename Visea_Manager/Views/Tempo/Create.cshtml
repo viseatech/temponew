@@ -1,0 +1,245 @@
+﻿@model Tuple<Event, Client, Visea_Expense_Manager.Data.MvcNoteContext, DateTime>
+
+@{
+    ViewData["Title"] = "Create";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head id="creathead">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Visea_Manager -</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <style type="text/css">
+        body {
+            overflow: auto;
+        }
+        .test {
+            width: 100%;
+            height: auto;
+        }
+        .xbtn {
+            margin-left: 90%;
+            margin-bottom: 3%;
+        }
+    </style>
+</head>
+<body class="test">
+    <button id="quitevent" class="btn btn-danger xbtn">X</button>
+    <h1>Creer</h1>
+
+    <h4>Événement</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" name="Date" value="@Model.Item4" asp-for="Item1.Date" />
+                <!--
+                <div class="form-group">
+                    <label asp-for="Item1.Date" class="control-label"></label>
+                    <input name="Date" asp-for="Item1.Date" class="form-control" />
+                    <span asp-validation-for="Item1.Date" class="text-danger"></span>
+                </div>
+                -->
+                <div class="form-group">
+                    <label class="control-label">Type d'événement</label>
+                    <select name="Type" id="Item1_Type_Id" asp-for="Item1.Type" class="form-control">
+                    </select>
+                    <span asp-validation-for="Item1.Type" class="text-danger"></span>
+                </div>
+
+                <div hidden id="client_formation" class="form-group">
+                    <label hidden id="formationlabel" class="control-label">Type de la formation </label>
+                    <label hidden id="clientlabel" class="control-label">Client </label>
+                    <select name="Classe_Id" id="Item1_Classe_Id" asp-for="Item1.Classe_Id" class="form-control">
+                    </select>
+                    <span asp-validation-for="Item1.Classe_Id" class="text-danger"></span>
+                </div>
+
+                <div hidden id="missionoutypeformation" class="form-group">
+                    <label class="control-label">Mission</label>
+                    <select name="Classe2_Id" id="Item1_Classe2_Id" asp-for="Item1.Classe2_Id" class="form-control">
+                    </select>
+                    <span asp-validation-for="Item1.Classe2_Id" class="text-danger"></span>
+                </div>
+                <div hidden id="type_mission" class="form-group">
+                    <label class="control-label">Objet</label>
+                    <select name="Classe3_Id" id="Item1_Classe3_Id" asp-for="Item1.Classe3_Id" class="form-control">
+                    </select>
+                    <span asp-validation-for="Item1.Classe3_Id" class="text-danger"></span>
+                </div>
+                <div hidden id="etape_mission" class="form-group">
+                    <label class="control-label">Etape de la mission</label>
+                    <select name="Classe4_Id" id="Item1_Classe4_Id" asp-for="Item1.Classe4_Id" class="form-control">
+                    </select>
+                    <span asp-validation-for="Item1.Classe4_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Nature</label>
+                    <input name="Nature" asp-for="Item1.Nature" class="form-control" />
+                    <span asp-validation-for="Item1.Nature" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Heures</label>
+                    <input name="Heures" asp-for="Item1.Heures" class="form-control" />
+                    <span asp-validation-for="Item1.Heures" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Commentaire</label>
+                    <textarea name="commente" asp-for="Item1.commente" class="form-control"></textarea>
+                    <span asp-validation-for="Item1.commente" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Creer" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(function () {
+            json = '@Json.Serialize(Model.Item3.TypeEvent.OrderBy(user => user.Name))';
+            var list = JSON.parse(json);
+            m = "<option value=\"\">--choisir une option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                m +=  '<option value="' + list[i].name + '">' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Type_Id').innerHTML = m;
+        });
+         $('#Item1_Type_Id').on("change", function (e) {
+        //if ($(this).val() == 1 || $(this).val() == 2) {
+        if ($(this).val() == "Clientèle" || $(this).val() == "Formation") {
+            var json;
+            if ($(this).val() == "Clientèle" ) {
+                json = '@Json.Serialize(Model.Item3.Client.OrderBy(user => user.Name))';
+                document.getElementById('clientlabel').hidden = false;
+                document.getElementById('formationlabel').hidden = true;
+            }
+            else {
+                json = '@Json.Serialize(Model.Item3.Formation.OrderBy(user => user.Name))';
+                document.getElementById('clientlabel').hidden = true;
+                document.getElementById('formationlabel').hidden = false;
+            }
+            var list = JSON.parse(json);
+
+            console.log(list);
+            m = "<option value=0>--Please choose an option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                m +=  '<option value="' + list[i].id + '">' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe_Id').innerHTML = m;
+            document.getElementById('client_formation').hidden = false;
+            hidden_Groupe_Classe(2);
+        }
+        else {
+            hidden_Groupe_Classe(1);
+        }
+    });
+    $('#Item1_Classe_Id').on("change", function (e) {
+        if (($('#Item1_Type_Id').val() == "Clientèle") && $(this).val() > 0) {
+            var json;
+
+            json = '@Json.Serialize(Model.Item3.Mission.OrderBy(user => user.Name))';
+
+            var list = JSON.parse(json);
+            console.log(list);
+            m = "<option value=0>--choisir une option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                if ($('#Item1_Type_Id').val() == "Clientèle" && $('#Item1_Classe_Id').val() != list[i].client_Id)
+                    continue;
+                m +=  '<option value="' + list[i].id + '">' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe2_Id').innerHTML = m;
+            document.getElementById('missionoutypeformation').hidden = false;
+            hidden_Groupe_Classe(3);
+        }
+        else {
+            hidden_Groupe_Classe(2);
+        }
+
+    });
+    $('#Item1_Classe2_Id').on("change", function (e) {
+        if ($('#Item1_Type_Id').val() == "Clientèle"  && $(this).val() > 0) {
+            var json = '@Json.Serialize(Model.Item3.Type_Mission.OrderBy(user => user.Name))';
+            var list = JSON.parse(json);
+            console.log(list);
+            m = "<option value=0>--choisir une option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                if ($('#Item1_Classe2_Id').val() != list[i].mission_Id)
+                    continue;
+                m += '<option value="' + list[i].id + '">' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe3_Id').innerHTML = m;
+            document.getElementById('type_mission').hidden = false;
+            hidden_Groupe_Classe(4);
+        }
+        else {
+            hidden_Groupe_Classe(3);
+        }
+
+    });
+    $('#Item1_Classe3_Id').on("change", function (e) {
+        hidden_Groupe_Classe(4);
+        if ($('#Item1_Type_Id').val() == "Clientèle"  && $(this).val() > 0 ) {
+            var json = '@Json.Serialize(Model.Item3.Etape_Mission.OrderBy(user => user.Name))';
+            var list = JSON.parse(json);
+            console.log(list);
+            m = "<option value=0>--choisir une option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                if ($('#Item1_Classe3_Id').val() != list[i].type_Mission_Id)
+                    continue;
+                m +=  '<option value="' + list[i].id + '">' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe4_Id').innerHTML = m;
+            document.getElementById('etape_mission').hidden = false;
+        }
+        else {
+            hidden_Groupe_Classe(4);
+        }
+
+    });
+
+        function hidden_Groupe_Classe(type) {
+            switch (type) {
+                case 1:
+                    $('#Item1_Classe_Id').val(0);
+                    document.getElementById('Item1_Classe_Id').innerHTML = "";
+                    document.getElementById('client_formation').hidden = true;
+                    document.getElementById('clientlabel').hidden = true;
+                    document.getElementById('formationlabel').hidden = true;
+                case 2:
+                    $('#Item1_Classe2_Id').val(0);
+                    document.getElementById('Item1_Classe2_Id').innerHTML = "";
+                    document.getElementById('missionoutypeformation').hidden = true;
+                case 3:
+                    $('#Item1_Classe3_Id').val(0);
+                    document.getElementById('Item1_Classe3_Id').innerHTML = "";
+                    document.getElementById('type_mission').hidden = true;
+                case 4:
+                    $('#Item1_Classe4_Id').val(0);
+                    document.getElementById('Item1_Classe4_Id').innerHTML = "";
+                    document.getElementById('etape_mission').hidden = true;
+            }
+        }
+
+        $("#quitevent").attr('class', 'btn btn-danger xbtn');
+        $("#quitevent").button().on("click", function () {
+            parent.$("#dialog").dialog("close");
+
+        });
+        
+    </script>
+</body>
+</html>

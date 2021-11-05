@@ -1,0 +1,87 @@
+﻿@model Tuple<Visea_Expense_Manager.Models.User, Boolean>
+
+
+@{
+    ViewData["Title"] = "Profile";
+}
+<style>
+    .rcornerimport {
+        border-radius: 25px;
+        border: 2px solid #224BB6;
+        padding: 1em;
+        width: 300px;
+        height: 130px;
+        margin: 6px;
+    }
+</style>
+
+<h1>Votre Profile</h1>
+
+<div>
+    <h4>Utilisateur</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Nom
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Rôle
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Role)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Manager
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Director)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Phone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="margin:6px" class="btn btn-primary" asp-action="Edit" asp-route-id="@Model.Item1.Id">Edit</a>
+    <a style="margin:6px" class="btn btn-primary" asp-action="Liste"> Annuaire </a>
+    @if (Model.Item2)
+    {
+        <a style="margin:6px" class="btn btn-primary" asp-controller="MonthValidations" asp-action="index"> Mois validés </a>
+        <a style="margin:6px" class="btn btn-primary" asp-controller="TypeEvents" asp-action="Create"> Créer des types et des sous-types d'événement </a>
+        if (User.Identity.Name == "zlayadi@viseaconsulting.com" || User.Identity.Name == "amukadi@viseaconsulting.com")
+        {
+            <div style="margin: 6px">
+                <form class="rcornerimport" method="post" enctype="multipart/form-data" asp-action="Flushdb">
+                    <div class="form-group">
+                        <input type="text" name="code" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Détruire la base de donné" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+            <div style="margin: 6px">
+                <form class="rcornerimport" method="post" enctype="multipart/form-data" asp-action="Import">
+                    <div class="form-group">
+                        <input type="file" name="file" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Reprise d'historique" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        }
+    }
+</div>

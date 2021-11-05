@@ -1,0 +1,98 @@
+﻿@model Visea_Expense_Manager.Models.Event
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+    <h1>Supprimer</h1>
+
+    <h3>Etes-vous sur de vouloir supprimer cet element?</h3>
+<div>
+    <h4>Événement</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nature)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+            <hr /> 
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            Date de creation
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date_of_creation)
+        </dd>
+        <dt class="col-sm-2">
+            Type
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class="col-sm-2">
+            Formation ou client
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe_str)
+        </dd>
+        <dt class="col-sm-2">
+            Type de formation ou de mission
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe2_str)
+        </dd>
+        <dt class="col-sm-2">
+            Type de la mission
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe3_str)
+        </dd>
+        <dt class="col-sm-2">
+            Etape de la mission
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classe4_str)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.User)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Heures)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Heures)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.commente)
+            <hr />
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.commente)
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index">Retour a la liste</a>
+    </form>
+</div>

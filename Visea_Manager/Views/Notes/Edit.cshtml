@@ -1,0 +1,88 @@
+﻿@model Tuple<Visea_Expense_Manager.Models.Note, IEnumerable<Visea_Expense_Manager.Models.Zfile>>
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Note</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Item1.Id" />
+            <div class="form-group">
+                <label asp-for="Item1.Title" class="control-label"></label>
+                <input name="Title" asp-for="Item1.Title" class="form-control" />
+                <span asp-validation-for="Item1.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Date" class="control-label"></label>
+                <input name="Date" asp-for="Item1.Date" class="form-control" />
+                <span asp-validation-for="Item1.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Type" class="control-label"></label>
+                <select name="Type" asp-for="Item1.Type" class="form-control">
+                    <option asp-for="Type" value="">--Please choose an option--</option>
+                    <option asp-for="Type" value="food">food</option>
+                    <option asp-for="Type" value="transport">transport</option>
+                    <option asp-for="Type" value="autre">autre</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Price" class="control-label"></label>
+                <input name="Price" type="number" step="0.01" asp-for="Item1.Price" class="form-control" />
+                <span asp-validation-for="Item1.Price" class="text-danger"></span>
+            </div>
+            <input type="hidden" name="User" asp-for="Item1.User" />
+            <div class="form-group">
+                <label asp-for="Item1.State" class="control-label"></label>
+                <select name="State" asp-for="Item1.State" class="form-control">
+                    <option asp-for="Item1.State" value="">--Please choose an option--</option>
+                    <option asp-for="Item1.State" value="En attente">En attente</option>
+                    <option asp-for="Item1.State" value="Valider">Valider</option>
+                    <option asp-for="Item1.State" value="Rejeter">Rejeter</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.commente" class="control-label"></label>
+                <textarea name="commente" asp-for="Item1.commente" class="form-control"></textarea>
+                <span asp-validation-for="Item1.commente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<form method="post" enctype="multipart/form-data" asp-action="FileUpload">
+    <input type="file" name="listfile" multiple />
+    <input type="hidden" name="iid" asp-for="Item1.Id" />
+    <input type="submit" value="Add img" class="btn btn-primary" /> |
+</form>
+@foreach (var item in Model.Item2)
+{
+    @if (Model.Item1.Id == item.NoteId)
+    {
+        <p>@item.path</p>
+        <img src="@item.path" asp-append-version="true" width="100%" height="auto" />
+        <form asp-action="Deleteimg">
+            <input type="hidden" name="iid" asp-for="Item1.Id" />
+            <input type="hidden" name="zid" asp-for="@item.Id" />
+            <input type="submit" value="Delete img" class="btn btn-danger" /> |
+        </form>
+    }
+}
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

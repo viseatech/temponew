@@ -1,0 +1,211 @@
+﻿@model Tuple<Event, Client, Visea_Expense_Manager.Data.MvcNoteContext>
+
+@{
+    ViewData["Title"] = "Create Evénements";
+}
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<h1>Creer</h1>
+
+<h4>Événement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Item1.Nature" class="control-label"></label>
+                <input asp-for="Item1.Nature" class="form-control" />
+                <span asp-validation-for="Item1.Nature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Date" class="control-label"></label>
+                <input asp-for="Item1.Date" class="form-control" />
+                <span asp-validation-for="Item1.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Type_Id" class="control-label"></label>
+                <select id="Item1_Type_Id" asp-for="Item1.Type_Id" class="form-control">
+                    <option value=0>--Please choose an option--</option>
+                    <option value=1>Clientele</option>
+                    <option value=2>Formation reçue</option>
+                    <option value=3>autre</option>
+                </select>
+                <span asp-validation-for="Item1.Type_Id" class="text-danger"></span>
+            </div>
+
+            <div hidden id="client_formation" class="form-group">
+                <label asp-for="Item1.Classe_Id" class="control-label"></label>
+                <select id="Item1_Classe_Id" asp-for="Item1.Classe_Id" class="form-control">
+                </select>
+                <span asp-validation-for="Item1.Classe_Id" class="text-danger"></span>
+            </div>
+            <div hidden id="missionoutypeformation" class="form-group">
+                <label asp-for="Item1.Classe2_Id" class="control-label"></label>
+                <select id="Item1_Classe2_Id" asp-for="Item1.Classe2_Id" class="form-control">
+                </select>
+                <span asp-validation-for="Item1.Classe2_Id" class="text-danger"></span>
+            </div>
+            <div hidden id="type_mission" class="form-group">
+                <label asp-for="Item1.Classe3_Id" class="control-label"></label>
+                <select id="Item1_Classe3_Id" asp-for="Item1.Classe3_Id" class="form-control">
+                </select>
+                <span asp-validation-for="Item1.Classe3_Id" class="text-danger"></span>
+            </div>
+            <div hidden id="etape_mission" class="form-group">
+                <label asp-for="Item1.Classe4_Id" class="control-label"></label>
+                <select id="Item1_Classe4_Id" asp-for="Item1.Classe4_Id" class="form-control">
+                </select>
+                <span asp-validation-for="Item1.Classe4_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.Heures" class="control-label"></label>
+                <input asp-for="Item1.Heures" class="form-control" />
+                <span asp-validation-for="Item1.Heures" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Item1.commente" class="control-label"></label>
+                <textarea asp-for="Item1.commente" class="form-control"></textarea>
+                <span asp-validation-for="Item1.commente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour a la liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+    $('#Item1_Type_Id').on("change", function (e) {
+        if ($(this).val() == 1 || $(this).val() == 2) {
+
+            var json;
+            if ($(this).val() == 1) {
+                json = '@Json.Serialize(Model.Item3.Client)';
+            }
+            else {
+                json = '@Json.Serialize(Model.Item3.Formation)';
+            }
+            var list = JSON.parse(json);
+
+            console.log(list);
+            m = "<option value=0>--Please choose an option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                m +=  '<option value=' + list[i].id + '>' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe_Id').innerHTML = m;
+            document.getElementById('client_formation').hidden = false;
+        }
+        else {
+            $('#Item1_Classe_Id').val(0); 
+            $('#Item1_Classe2_Id').val(0); 
+            $('#Item1_Classe3_Id').val(0);
+            $('#Item1_Classe4_Id').val(0); 
+            document.getElementById('Item1_Classe_Id').innerHTML = "";
+            document.getElementById('Item1_Classe2_Id').innerHTML = "";
+            document.getElementById('Item1_Classe3_Id').innerHTML = "";
+            document.getElementById('Item1_Classe4_Id').innerHTML = "";
+            document.getElementById('client_formation').hidden = true;
+            document.getElementById('missionoutypeformation').hidden = true;
+            document.getElementById('type_mission').hidden = true;
+            document.getElementById('etape_mission').hidden = true;
+        }
+    });
+    $('#Item1_Classe_Id').on("change", function (e) {
+        console.log("????");
+        if (($('#Item1_Type_Id').val() == 1 || $('#Item1_Type_Id').val() == 2) && $(this).val() > 0) {
+            var json;
+
+            if ($(this).val() == 1) {
+                json = '@Json.Serialize(Model.Item3.Mission)';
+            }
+            else {
+                json = '@Json.Serialize(Model.Item3.Type_formation)';
+            }
+            var list = JSON.parse(json);
+            console.log(list);
+            m = "<option value=0>--Please choose an option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                if ($(this).val() == 1 && $('#Item1_Classe_Id').val() != list[i].client_Id)
+                    continue;
+                if ($(this).val() == 2 && $('#Item1_Classe_Id').val() != list[i].formation_Id)
+                    continue;
+                m +=  '<option value=' + list[i].id + '>' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe2_Id').innerHTML = m;
+            document.getElementById('missionoutypeformation').hidden = false;
+        }
+        else {
+            $('#Item1_Classe2_Id').val(0); 
+            $('#Item1_Classe3_Id').val(0);
+            $('#Item1_Classe4_Id').val(0); 
+            document.getElementById('Item1_Classe2_Id').innerHTML = "";
+            document.getElementById('Item1_Classe3_Id').innerHTML = "";
+            document.getElementById('Item1_Classe4_Id').innerHTML = "";
+            document.getElementById('missionoutypeformation').hidden = true;
+            document.getElementById('type_mission').hidden = true;
+            document.getElementById('etape_mission').hidden = true;
+        }
+
+    });
+    $('#Item1_Classe2_Id').on("change", function (e) {
+        console.log("????");
+
+        if ($('#Item1_Type_Id').val() == 1  && $(this).val() > 0) {
+            var json = '@Json.Serialize(Model.Item3.Type_Mission)';
+            var list = JSON.parse(json);
+            console.log(list);
+            m = "<option value=0>--Please choose an option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                if ($('#Item1_Classe2_Id').val() != list[i].mission_Id)
+                    continue;
+                m += '<option value=' + list[i].id + '>' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe3_Id').innerHTML = m;
+            document.getElementById('type_mission').hidden = false;
+        }
+        else {
+            $('#Item1_Classe3_Id').val(0);
+            $('#Item1_Classe4_Id').val(0); 
+            document.getElementById('Item1_Classe3_Id').innerHTML = "";
+            document.getElementById('Item1_Classe4_Id').innerHTML = "";
+            document.getElementById('type_mission').hidden = true;
+            document.getElementById('etape_mission').hidden = true;
+        }
+
+    });
+    $('#Item1_Classe3_Id').on("change", function (e) {
+        console.log("????");
+        if ($('#Item1_Type_Id').val() == 1  && $(this).val() > 0 ) {
+            var json = '@Json.Serialize(Model.Item3.Etape_Mission)';
+            var list = JSON.parse(json);
+            console.log(list);
+            m = "<option value=0>--Please choose an option--</option>";
+            for (i = 0; i < list.length; i += 1) {
+                if ($('#Item1_Classe3_Id').val() != list[i].type_Mission_Id)
+                    continue;
+                m +=  '<option value=' + list[i].id + '>' + list[i].name + '</option>';
+            }
+            document.getElementById('Item1_Classe4_Id').innerHTML = m;
+            document.getElementById('etape_mission').hidden = false;
+        }
+        else {
+            $('#Item1_Classe4_Id').val(0); 
+            document.getElementById('Item1_Classe4_Id').innerHTML = "";
+            document.getElementById('etape_mission').hidden = true;
+        }
+
+    });
+
+</script>

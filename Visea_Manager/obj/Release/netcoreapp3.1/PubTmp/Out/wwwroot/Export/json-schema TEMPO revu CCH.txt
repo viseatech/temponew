@@ -1,0 +1,166 @@
+{
+  "title": "JSON Schema for all TEMPO text",
+  "info": "si vous voulez faire un changement n'oublier pas de poser une marque ###",
+  "exemple": "modification", ###
+
+  "Bar_menu": {
+    "Logo": "VISEA",
+    "bouton_1": "Tempo",
+    "bouton_2": "Absence",
+    "bouton_3": "Informations",
+    "bouton_4": "Hello {mail}",    
+    "bouton_5": "Sign out"
+  },
+
+  "Home": {
+    "Banniere": "Welcome to VISEA"
+  },
+
+  "Tempo": {
+    "Banniere": "Tempo",
+    "Bloc_information": {
+      "bouton_1": "Filtrer ou importer",
+      "text_1": "Utilisateur : {email}",
+      "text_2": "Total des heures de la sélection : h:m",
+      "text_3": "Merci de valider le mois une fois l'ensemble des événements créés.", ##
+      "text_4": "Le mois est déjà validé.",
+      "bouton_2": " Valider le mois en cours ? ",
+      "pop_up_validation": "Voulez-vous valider les entrées du mois ? Aucune modification ne pourra être effectuée sur ce mois." ###
+    },
+    "date_bloc": "dd/mm/yyyy",
+    "bouton_1": "Événement du mois",
+    "bouton_2": "Créer un nouvel événement",
+    "bouton_3": "Coller",
+    "datatable": {
+      "column": {
+        "Copier": {
+          "bouton_1": "Copier"
+        },
+        "Type": "Type",
+        "Client": "Client",
+        "Mission": "Mission",
+        "Nature": "Nature",
+        "Heures": "Heures",
+        "Options": {
+          "bouton_1": "Editer",
+          "bouton_2": "Détails",
+          "bouton_3": "Supprimer"
+        }
+      }
+    },
+    "événements": {
+      "Banniere": "Liste de tous les événements",
+      "Filtre_block": {
+        "titre_1": "Date de début",
+        "titre_2": "Date de fin",
+        "titre_3": "Choisir un consultant", ###
+        "titre_4": "Type d'événement",
+        "titre_5": "Type de la formation",
+        "titre_6": "Client",
+        "titre_7": "Mission",
+        "titre_8": "Objet",
+        "bouton_filtre": "Filtrer" ###
+      },
+      "text_1": "Télécharger le fichier xlsx de référence", ###
+      "importer_fichier_block": {
+        "bouton_1": "Choisir un fichier",
+        "bouton_2": "Importer les événements en Csv"
+      },
+      "datatable": {
+        "column": {
+          "Date": "Date",
+          "Type": "Type",
+          "Client": "Client",
+          "Mission": "Mission",
+          "Heures": "Heures",
+          "Nature": "Nature",
+          "Commentaire": "Commentaire",
+          "User": "User",
+          "Options": {
+            "bouton_1": "Editer",
+            "bouton_2": "Détails",
+            "bouton_3": Supprimer"
+          }
+        }
+      }
+    }
+  },
+  "Absence": {
+    "Banniere": "Absence",
+    "option_admin": "Interface administrateur",
+    "bouton_admin": "Voir toutes les demandes d'absence",
+    "option_consultant": "",
+    "bouton_creation_absence": "Créer une demande d'absence",
+    "datatable": {
+      "column": {
+        "Utilisateur": "Utilisateur",
+        "Date_Debut": "Date_Début",
+        "Date_Fin": "Date_Fin",
+        "Temps": "Temps",
+        "Type": "Type",
+        "Manager": "Manager", #
+        "état": "état",
+        "Options": {
+          "bouton_1": "Editer",
+          "bouton_2": "Détails",
+          "bouton_3": "Supprimer"
+        }
+      }
+    }
+  },
+  "Informations": {
+    "Banniere": "Informations",
+    "text_1": "Bonjour, ce site est le nouvel extranet de VISEA, il est en phase de test pour le moment. Ce site a e?té cre?é par Ziane Layadi (zlayadi@viseaconsulting.com). Pour tout retour, bug ou demande d’amélioration n’hésitez pas à m'envoyer un mail. En effet le site est en amélioration constante, de nombreux points sont déjà cre?és mais n’ont pas encore passe? les tests."
+  },
+  "Profil": {
+    "Banniere": "Votre Profil",
+    "text_1": "Utilisateur",
+    "Name": "Nom",
+    "Role": "Rôle",   ###
+    "Email": "Email",
+    "Manager": "Manager",
+    "Phone": "Phone",
+    "bouton_1": "Edit",
+    "bouton_2": "Annuaire",
+    "bouton_3": "Mois validés",  #
+    "bouton_4": "Créer des types et des sous-types d'événement" #
+  },
+  "Annuaire": {
+    "Banniere": "Annuaire",
+    "datatable": {
+      "column": {
+        "Name": "Nom",   ###
+        "Email": "Email",
+        "Manager": "Manager",
+        "Phone": "Phone",
+        "Role": "Rôle",  ###
+        "Options": {
+          "bouton_1": "Editer",
+          "bouton_2": "Détails",
+          "bouton_3": "Supprimer"
+        }
+      }
+    }
+  },
+  "Mois validés": {
+    "Banniere": "Mois validés",
+    "datatable": {
+      "column": {
+        "Nom": "Nom",
+        "Date": "Date",
+        "Options": {
+          "bouton_2": "Détails",
+          "bouton_3": "Supprimer"
+        }
+      }
+    }
+  },
+  "Créer des nouveaux types d'événement": {
+    "Banniere": "Créer des nouveaux types d'événement",
+    "text_1": "Nommer votre nouvel événement puis sélectionner le parent, si cet événement n'a pas de parent ne rien sélectionner", ###
+    "Titre du nouvel élément": "Titre du nouvel élément", ###
+    "Type d'événement": "Type d'événement",
+    "bouton_1": "Créer",  ###
+    "bouton_2": "Profil",
+  }
+}

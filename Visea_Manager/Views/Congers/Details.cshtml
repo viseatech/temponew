@@ -1,0 +1,91 @@
+﻿@model Tuple<Visea_Expense_Manager.Models.Conger, IEnumerable<Visea_Expense_Manager.Models.Zfile>>
+
+@{
+    ViewData["Title"] = "Details Absence";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Absence</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Date de debut
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Date_Debut)
+        </dd>
+        <dt class="col-sm-2">
+            Matin ou Midi ?
+        </dt>
+        @if (Model.Item1.Demijourne_Debut == 1)
+        {
+            <dd class="col-sm-10">
+                Matin
+            </dd>
+        }
+        else
+        {
+            <dd class="col-sm-10">
+                Midi
+            </dd>
+        }
+        <dt class="col-sm-2">
+            Date de fin
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Date_Fin)
+        </dd>
+        <dt class="col-sm-2">
+            Midi ou soir ?
+        </dt>
+        @if (Model.Item1.Demijourne_Fin == 2)
+        {
+            <dd class="col-sm-10">
+                Midi
+            </dd>
+        }
+        else
+        {
+            <dd class="col-sm-10">
+                Soir
+            </dd>
+        }
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Item1.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.Type)
+        </dd>
+        <dt class="col-sm-2">
+            Utilistateur
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.User)
+        </dd>
+        <dt class="col-sm-2">
+            Etat
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.State)
+        </dd>
+        <dt class="col-sm-2">
+            Commentaire
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Item1.commente)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Item1.Id">Editer</a> |
+    <a asp-action="Index">Retour a la liste</a>
+</div>
+@foreach (var item in Model.Item2)
+{
+    @if (Model.Item1.Id == item.NoteId)
+    {
+        <iframe src="@Url.Content("~/Files")/@item.Name" asp-append-version="true" width="100%" height="400"></iframe>
+    }
+}
